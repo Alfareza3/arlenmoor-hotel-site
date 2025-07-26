@@ -39,7 +39,6 @@ Tabel yang digunakan:
 - `galeri`
 - `direktori`
 
-> Struktur database tersedia di folder `docs/` atau bisa import langsung dari file `sunodia.sql` *(opsional)*.
 
 🔐 Login Admin
 Akses admin: `http://localhost/Arlenmoor/admin/login.php`
