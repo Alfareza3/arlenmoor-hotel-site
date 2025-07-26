@@ -1,10 +1,8 @@
-/* Font global */
 body {
   font-family: 'Lora', serif;
   color: #333;
 }
 
-/* Untuk heading elegan */
 h1, h2, h3, .display-4 {
   font-family: 'Playfair Display', serif;
 }

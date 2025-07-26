@@ -10,12 +10,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $id_reservasi = intval($_POST['id_reservasi']);
   $tanggal_bayar = date('Y-m-d H:i:s');
 
-  // Validasi reservasi
   $cek = mysqli_query($conn, "SELECT * FROM reservasi WHERE id_reservasi = $id_reservasi");
   if (mysqli_num_rows($cek) === 0) {
     $error = "ID reservasi tidak ditemukan.";
   } else {
-    // Validasi gambar
     $bukti = $_FILES['bukti_transfer']['name'];
     $tmp   = $_FILES['bukti_transfer']['tmp_name'];
     $ext   = strtolower(pathinfo($bukti, PATHINFO_EXTENSION));
@@ -27,7 +25,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       $new_filename = time() . '-' . basename($bukti);
       move_uploaded_file($tmp, "assets/img/" . $new_filename);
 
-      // Simpan ke database
       mysqli_query($conn, "INSERT INTO pembayaran (id_reservasi, bukti_bayar, tanggal_bayar) 
                           VALUES ($id_reservasi, '$new_filename', '$tanggal_bayar')");
       $berhasil = true;

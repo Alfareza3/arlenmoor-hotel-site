@@ -14,7 +14,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $deskripsi= $_POST['deskripsi'];
   $fasilitas= $_POST['fasilitas'];
 
-  // upload file
   $foto = $_FILES['foto']['name'];
   $tmp  = $_FILES['foto']['tmp_name'];
   move_uploaded_file($tmp, "../assets/img/" . $foto);

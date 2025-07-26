@@ -4,37 +4,31 @@ include 'includes/head.php';
 include 'includes/navbar.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-  // Data tamu
   $nama     = $_POST['nama_lengkap'];
   $email    = $_POST['email'];
   $no_hp    = $_POST['no_hp'];
   $alamat   = $_POST['alamat'];
 
-  // Data reservasi
   $id_kamar     = $_POST['id_kamar'];
   $check_in     = $_POST['check_in'];
   $check_out    = $_POST['check_out'];
   $jumlah_kamar = $_POST['jumlah_kamar'];
   $tanggal_pesan = date('Y-m-d');
 
-  // Validasi dasar
   if (empty($nama) || empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL) || empty($id_kamar)) {
     die("Data tidak valid.");
   }
 
-  // Simpan tamu
   $stmt_tamu = $conn->prepare("INSERT INTO tamu (nama_lengkap, email, no_hp, alamat) VALUES (?, ?, ?, ?)");
   $stmt_tamu->bind_param("ssss", $nama, $email, $no_hp, $alamat);
   $stmt_tamu->execute();
   $id_tamu = $stmt_tamu->insert_id;
 
-  // Simpan reservasi
   $stmt_reservasi = $conn->prepare("INSERT INTO reservasi (id_tamu, id_kamar, check_in, check_out, jumlah_kamar, tanggal_reservasi, status) VALUES (?, ?, ?, ?, ?, ?, 'pending')");
   $stmt_reservasi->bind_param("iissis", $id_tamu, $id_kamar, $check_in, $check_out, $jumlah_kamar, $tanggal_pesan);
   $stmt_reservasi->execute();
   $id_reservasi = $stmt_reservasi->insert_id;
 
-  // Tampilkan konfirmasi
   ?>
   <div class="container py-5 text-center">
     <h2 class="mb-3">Reservasi Berhasil!</h2>
@@ -51,7 +45,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   <?php
 
 } else {
-  // Jika bukan dari form, arahkan ke halaman reservasi
   header("Location: reservasi.php");
   exit;
 }

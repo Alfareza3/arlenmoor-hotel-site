@@ -8,7 +8,6 @@ include '../koneksi.php';
 include 'partials/head.php';
 ?>
 
-<!-- Mulai layout -->
 <body>
 <div class="admin-wrapper">
 
@@ -54,7 +53,7 @@ include 'partials/head.php';
 
 
 
-</div> <!-- penutup .admin-wrapper -->
+</div>
 </body>
 
 <?php include 'partials/footer.php'; ?>

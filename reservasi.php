@@ -3,7 +3,6 @@ include 'koneksi.php';
 include 'includes/head.php';
 include 'includes/navbar.php';
 
-// Ambil data kamar jika ada ID dikirim lewat URL
 $id_kamar = isset($_GET['id']) ? intval($_GET['id']) : 0;
 $kamar = null;
 

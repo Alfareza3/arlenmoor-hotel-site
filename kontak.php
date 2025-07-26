@@ -3,7 +3,6 @@ include 'koneksi.php';
 include 'includes/head.php';
 include 'includes/navbar.php';
 
-// Proses kirim pesan (jika disubmit)
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $nama = $_POST['nama'];
   $email = $_POST['email'];
