@@ -41,7 +41,9 @@ Tabel yang digunakan:
 
 
 🔐 Login Admin
-Akses admin: `http://localhost/Arlenmoor/admin/login.php`
+Username: admin
+Password: arlen123
+
 
 > Gunakan akun yang sudah didaftarkan di database.
 
