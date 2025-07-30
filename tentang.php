@@ -21,7 +21,7 @@ include 'includes/navbar.php';
 
             <p>Terletak di jantung kota tua, hotel ini memadukan suasana tenang dengan lokasi strategis. Fasilitas unggulan kami meliputi restoran fine-dining, ballroom mewah, perpustakaan tua, dan layanan butler pribadi untuk kamar suite.</p>
 
-            <p>Kami percaya pengalaman menginap bukan hanya tempat tidur, tapi bagaimana Anda dihargai. Selamat datang di The Arlenmoor — tempat elegan yang hidup dari generasi ke generasi.</p>
+            <p>Kami percaya pengalaman menginap bukan hanya tempat tidur, tapi bagaimana Anda dihargai. Selamat datang di The Arlenmoor tempat elegan yang hidup dari generasi ke generasi.</p>
 
             <div class="text-center mt-4">
               <a href="index.php" class="btn btn-outline-light btn-sm">← Kembali ke Beranda</a>
