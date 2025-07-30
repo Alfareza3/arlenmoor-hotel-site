@@ -3,7 +3,6 @@
 
 <main class="flex-grow-1 position-relative">
 
-  <!-- HERO SLIDER -->
   <section class="hero-slider position-relative" style="height: 90vh;">
     <div id="hero-images">
       <div class="slide active" style="background-image: url('assets/img/hero2-bg.jpg');"></div>
@@ -17,21 +16,37 @@
     </div>
   </section>
 
-<!-- DESKRIPSI DENGAN BACKGROUND FULL TRANSPARAN -->
-<section class="deskripsi-section d-flex align-items-center text-white text-center">
-  <div class="container p-5">
-    <h2 class="mb-3">Kemewahan Bernuansa Klasik</h2>
-    <p>
-      The Arlenmoor adalah hotel bergaya klasik megah yang berdiri sejak abad ke-19. Dirancang untuk para tamu yang menghargai keheningan, keindahan arsitektur, dan pelayanan penuh wibawa.
-    </p>
-    <p>
-      Nikmati suasana berkelas, interior elegan, serta layanan personal yang menghadirkan kenyamanan dalam keheningan klasik.
-    </p>
-  </div>
-</section>
-
+  <section class="deskripsi-section d-flex align-items-center text-white text-center">
+    <div class="container p-5">
+      <h2 class="mb-3">Kemewahan Bernuansa Klasik</h2>
+      <p>
+        The Arlenmoor adalah hotel bergaya klasik megah yang berdiri sejak abad ke-19. Dirancang untuk para tamu yang menghargai keheningan, keindahan arsitektur, dan pelayanan penuh wibawa.
+      </p>
+      <p>
+        Nikmati suasana berkelas, interior elegan, serta layanan personal yang menghadirkan kenyamanan dalam keheningan klasik.
+      </p>
+    </div>
+  </section>
 
 </main>
+
+<nav class="mobile-nav d-md-none bg-dark text-white d-flex justify-content-around py-2 fixed-bottom shadow-lg">
+  <a href="index.php" class="text-warning text-center small">
+    <div>🏠</div><div>Beranda</div>
+  </a>
+  <a href="kamar.php" class="text-white text-center small">
+    <div>🛏️</div><div>Kamar</div>
+  </a>
+  <a href="reservasi.php" class="text-white text-center small">
+    <div>📝</div><div>Pesan Kamar</div>
+  </a>
+  <a href="kontak.php" class="text-white text-center small">
+    <div>📞</div><div>Kontak</div>
+  </a>
+  <a href="tentang.php" class="text-white text-center small">
+    <div>📖</div><div>Tentang</div>
+  </a>
+</nav>
 
 <?php include 'includes/footer.php'; ?>
 
@@ -83,6 +98,15 @@
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(255,255,255,0.2);
+  }
+
+  .mobile-nav a {
+    text-decoration: none;
+    flex: 1;
+  }
+
+  .mobile-nav a:hover {
+    background: rgba(255,255,255,0.05);
   }
 </style>
 

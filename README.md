@@ -1,6 +1,6 @@
 The Arlenmoor Hotel 🏨
 
-Website resmi fiktif untuk hotel bergaya klasik Eropa bernama **The Arlenmoor**. Dibuat sebagai proyek personal/PKL dengan PHP Native + Bootstrap 5.
+Website resmi fiktif untuk hotel bergaya klasik Eropa bernama The Arlenmoor. Dibuat sebagai proyek personal/PKL dengan PHP Native + Bootstrap 5.
 
 ---
 
@@ -14,23 +14,28 @@ Website resmi fiktif untuk hotel bergaya klasik Eropa bernama **The Arlenmoor**.
 - Tentang: Deskripsi sejarah hotel dan layanan unggulan.
 - Kontak: Formulir pengiriman pesan ke hotel.
 
+📱 Panel Navigasi Mobile Khusus
+- Navigasi bawah layar (bottom nav) di perangkat mobile
+- Menampilkan ikon dan label: Beranda, Kamar, Reservasi, Kontak, Tentang
+- Memudahkan pengguna berpindah halaman tanpa buka menu
+
 🎵 Musik Latar
 - Musik piano klasik otomatis diputar antar halaman
-- Tombol 🎵 kontrol di kanan bawah layar.
+- Tombol 🎵 kontrol di kanan bawah layar
+- Status musik tersimpan (play/pause) lewat `localStorage`
 
 ---
 
 🔐 Halaman Admin
-Login sederhana (user: admin pass: arlen123) untuk mengelola:
+Login sederhana (`user: admin`, `pass: arlen123`) untuk mengelola:
 
-- ✅ Dashboard ringkasan total kamar, reservasi, pembayaran.
+- ✅ Dashboard ringkasan total kamar, reservasi, pembayaran
 - 🛏️ Kelola Kamar (CRUD)
 - 📆 Kelola Reservasi (CRUD)
 - 💳 Pembayaran (Upload & verifikasi bukti transfer)
 - 💬 Pesan Masuk (data dari form kontak)
 
 ---
-
 
 💾 Database
 Gunakan database bernama `arlenmoor` dengan tabel:
@@ -46,10 +51,9 @@ Gunakan database bernama `arlenmoor` dengan tabel:
 - PHP Native
 - Bootstrap 5
 - MySQL
-- JavaScript (for music toggle & localStorage)
+- JavaScript (untuk musik & navigasi interaktif)
 
 ---
-
 
 📝 Catatan
 Website ini dirancang sebagai simulasi hotel klasik, mengedepankan:
@@ -60,6 +64,5 @@ Website ini dirancang sebagai simulasi hotel klasik, mengedepankan:
 ---
 
 👤 Author
-Dimas Fahri Alfareza  
-Project PKL 2025 – Website Hotel The Arlenmoor  
-```
+Dimas Fahri Alfareza
+Project PKL 2025 – Website Hotel The Arlenmoor

@@ -60,7 +60,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 </style>
 
-<!-- Tampilan -->
 <section class="bg-konfirmasi">
   <div class="container">
     <div class="kartu-konfirmasi text-center">

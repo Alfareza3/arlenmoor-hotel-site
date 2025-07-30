@@ -14,7 +14,6 @@ include 'includes/navbar.php';
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-lg-8">
-          <!-- Container tanpa latar -->
           <div class="p-4 text-white">
             <h2 class="mb-4 text-center" style="font-family: 'Playfair Display', serif;">Tentang <span class="text-warning">The Arlenmoor</span></h2>
             <p><strong>The Arlenmoor</strong> adalah hotel bergaya klasik Eropa yang berdiri sejak abad ke-19. Dengan filosofi <em>timeless elegance</em>, kami melayani tamu yang mencari keheningan, kemewahan arsitektur lawas, dan pelayanan yang berkelas.</p>
@@ -32,5 +31,32 @@ include 'includes/navbar.php';
     </div>
   </section>
 </main>
+<style>
+    .mobile-nav a {
+    text-decoration: none;
+    flex: 1;
+  }
+
+  .mobile-nav a:hover {
+    background: rgba(255,255,255,0.05);
+  }
+</style>
+<nav class="mobile-nav d-md-none bg-dark text-white d-flex justify-content-around py-2 fixed-bottom shadow-lg">
+  <a href="index.php" class="text-white text-center small">
+    <div>🏠</div><div>Beranda</div>
+  </a>
+  <a href="kamar.php" class="text-white text-center small">
+    <div>🛏️</div><div>Kamar</div>
+  </a>
+  <a href="reservasi.php" class="text-white text-center small">
+    <div>📝</div><div>Pesan Kamar</div>
+  </a>
+  <a href="kontak.php" class="text-white text-center small">
+    <div>📞</div><div>Kontak</div>
+  </a>
+  <a href="tentang.php" class="text-warning text-center small">
+    <div>📖</div><div>Tentang</div>
+  </a>
+</nav>
 
 <?php include 'includes/footer.php'; ?>

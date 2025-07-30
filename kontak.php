@@ -41,6 +41,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   background-color: rgba(255, 255, 255, 0.15);
   color: #fff;
 }
+
+  .mobile-nav a {
+    text-decoration: none;
+    flex: 1;
+  }
+
+  .mobile-nav a:hover {
+    background: rgba(255,255,255,0.05);
+  }
 </style>
 
 <section style="
@@ -78,5 +87,23 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     </form>
   </div>
 </section>
+
+<nav class="mobile-nav d-md-none bg-dark text-white d-flex justify-content-around py-2 fixed-bottom shadow-lg">
+  <a href="index.php" class="text-white text-center small">
+    <div>🏠</div><div>Beranda</div>
+  </a>
+  <a href="kamar.php" class="text-white text-center small">
+    <div>🛏️</div><div>Kamar</div>
+  </a>
+  <a href="reservasi.php" class="text-white text-center small">
+    <div>📝</div><div>Pesan Kamar</div>
+  </a>
+  <a href="kontak.php" class="text-warning text-center small">
+    <div>📞</div><div>Kontak</div>
+  </a>
+  <a href="tentang.php" class="text-white text-center small">
+    <div>📖</div><div>Tentang</div>
+  </a>
+</nav>
 
 <?php include 'includes/footer.php'; ?>
