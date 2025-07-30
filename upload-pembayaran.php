@@ -33,42 +33,73 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 ?>
 
-<div class="container py-5">
-  <h2 class="mb-4 text-center">Upload Bukti Pembayaran</h2>
+<style>
+.bg-upload {
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+              url('assets/img/hero3-bg.jpg') center/cover no-repeat fixed;
+  min-height: 100vh;
+  padding: 60px 15px;
+  display: flex;
+  align-items: center;
+}
 
-  <?php if ($berhasil): ?>
-    <div class="alert alert-success text-center">✅ Bukti pembayaran berhasil dikirim. Menunggu verifikasi.</div>
-  <?php elseif ($error): ?>
-    <div class="alert alert-danger text-center">❌ <?= $error ?></div>
-  <?php endif; ?>
+.kartu-upload {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 40px;
+  max-width: 600px;
+  color: white;
+  margin: auto;
+  box-shadow: 0 0 30px rgba(0,0,0,0.3);
+}
+.kartu-upload h2 {
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+}
+</style>
 
-  <form method="POST" enctype="multipart/form-data" class="mx-auto" style="max-width:600px;">
-    <div class="mb-3">
-      <label for="id_reservasi">ID Reservasi</label>
-      <select name="id_reservasi" id="id_reservasi" class="form-control" required>
-        <option value="">-- Pilih Reservasi --</option>
-        <?php
-        $list = mysqli_query($conn, "SELECT r.id_reservasi, t.nama_lengkap 
-                                     FROM reservasi r 
-                                     JOIN tamu t ON r.id_tamu = t.id_tamu 
-                                     ORDER BY r.id_reservasi DESC");
-        while ($r = mysqli_fetch_assoc($list)) {
-          echo "<option value='{$r['id_reservasi']}'>#{$r['id_reservasi']} - {$r['nama_lengkap']}</option>";
-        }
-        ?>
-      </select>
+<section class="bg-upload">
+  <div class="container">
+    <div class="kartu-upload">
+      <h2 class="text-center mb-4">Upload Bukti Pembayaran</h2>
+
+      <?php if ($berhasil): ?>
+        <div class="alert alert-success text-center">✅ Bukti pembayaran berhasil dikirim. Menunggu verifikasi.</div>
+      <?php elseif ($error): ?>
+        <div class="alert alert-danger text-center">❌ <?= $error ?></div>
+      <?php endif; ?>
+
+      <form method="POST" enctype="multipart/form-data">
+        <div class="mb-3">
+          <label for="id_reservasi" class="form-label">ID Reservasi</label>
+          <select name="id_reservasi" id="id_reservasi" class="form-control" required>
+            <option value="">-- Pilih Reservasi --</option>
+            <?php
+            $list = mysqli_query($conn, "SELECT r.id_reservasi, t.nama_lengkap 
+                                        FROM reservasi r 
+                                        JOIN tamu t ON r.id_tamu = t.id_tamu 
+                                        ORDER BY r.id_reservasi DESC");
+            while ($r = mysqli_fetch_assoc($list)) {
+              echo "<option value='{$r['id_reservasi']}'>#{$r['id_reservasi']} - {$r['nama_lengkap']}</option>";
+            }
+            ?>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label for="bukti_transfer" class="form-label">Bukti Transfer (gambar)</label>
+          <input type="file" name="bukti_transfer" id="bukti_transfer" accept="image/*" class="form-control" required>
+        </div>
+
+        <div class="text-center">
+          <button class="btn btn-success px-4">Kirim</button>
+          <a href="index.php" class="btn btn-outline-light ms-2">Kembali</a>
+        </div>
+      </form>
     </div>
-
-    <div class="mb-3">
-      <label for="bukti_transfer">Bukti Transfer (gambar)</label>
-      <input type="file" name="bukti_transfer" id="bukti_transfer" accept="image/*" class="form-control" required>
-    </div>
-
-    <div class="text-center">
-      <button class="btn btn-primary">Kirim</button>
-      <a href="index.php" class="btn btn-secondary ms-2">Kembali</a>
-    </div>
-  </form>
-</div>
+  </div>
+</section>
 
 <?php include 'includes/footer.php'; ?>

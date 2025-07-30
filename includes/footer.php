@@ -1,6 +1,6 @@
 <footer class="bg-dark text-white py-4 mt-auto">
   <div class="container text-center">
-    <p class="mb-0">&copy; <?php echo date('Y'); ?> The Arlenmoor. All rights reserved.</p>
+    <p class="mb-1">&copy; <?= date('Y'); ?> <strong>The Arlenmoor</strong>. All rights reserved.</p>
   </div>
 </footer>
 

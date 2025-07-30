@@ -28,22 +28,57 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $stmt_reservasi->bind_param("iissis", $id_tamu, $id_kamar, $check_in, $check_out, $jumlah_kamar, $tanggal_pesan);
   $stmt_reservasi->execute();
   $id_reservasi = $stmt_reservasi->insert_id;
+?>
 
-  ?>
-  <div class="container py-5 text-center">
-    <h2 class="mb-3">Reservasi Berhasil!</h2>
-    <p>Terima kasih telah memesan di <strong>The Arlenmoor</strong>.</p>
-    <p><strong>ID Reservasi:</strong> <?= $id_reservasi ?></p>
-    <p>Status reservasi saat ini: <span class="badge bg-warning text-dark">Pending</span></p>
-    <a href="index.php" class="btn btn-outline-primary mt-3">Kembali ke Beranda</a>
+<!-- Gaya -->
+<style>
+.bg-konfirmasi {
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+              url('assets/img/hero3-bg.jpg') center/cover no-repeat fixed;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 60px 15px;
+}
 
-    <div class="text-center mt-4">
-      <p>Sudah transfer? Upload bukti pembayaran:</p>
-      <a href="upload-pembayaran.php?id=<?= $id_reservasi ?>" class="btn btn-outline-success">Upload Pembayaran</a>
+.kartu-konfirmasi {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 40px 30px;
+  max-width: 600px;
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
+  margin: auto;
+  box-shadow: 0 0 30px rgba(0,0,0,0.4);
+}
+
+.kartu-konfirmasi .btn {
+  box-shadow: none;
+}
+</style>
+
+<!-- Tampilan -->
+<section class="bg-konfirmasi">
+  <div class="container">
+    <div class="kartu-konfirmasi text-center">
+      <h2 class="mb-3">Reservasi Berhasil!</h2>
+      <p>Terima kasih telah memesan di <strong>The Arlenmoor</strong>.</p>
+      <p><strong>ID Reservasi:</strong> <?= $id_reservasi ?></p>
+      <p>Status reservasi saat ini: <span class="badge bg-warning text-dark">Pending</span></p>
+      <a href="index.php" class="btn btn-outline-light mt-3">← Kembali ke Beranda</a>
+
+      <div class="mt-4">
+        <p>Sudah transfer? Upload bukti pembayaran:</p>
+        <a href="upload-pembayaran.php?id=<?= $id_reservasi ?>" class="btn btn-success">Upload Pembayaran</a>
+      </div>
     </div>
   </div>
-  <?php
+</section>
 
+<?php
 } else {
   header("Location: reservasi.php");
   exit;
