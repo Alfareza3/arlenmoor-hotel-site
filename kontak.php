@@ -15,12 +15,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 ?>
 
 <style>
+body {
+  font-family: 'Playfair Display', serif;
+}
+
 .form-kontak {
   background-color: rgba(0, 0, 0, 0.6);
   color: #fff;
   padding: 40px;
   border-radius: 15px;
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(6px);
 }
 
 .form-kontak label {
@@ -42,14 +46,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   color: #fff;
 }
 
-  .mobile-nav a {
-    text-decoration: none;
-    flex: 1;
-  }
+.mobile-nav a {
+  text-decoration: none;
+  flex: 1;
+}
 
-  .mobile-nav a:hover {
-    background: rgba(255,255,255,0.05);
-  }
+.mobile-nav a:hover {
+  background: rgba(255,255,255,0.05);
+}
 </style>
 
 <section style="
@@ -59,27 +63,30 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   padding: 60px 0;
 ">
   <div class="container">
-    <h2 class="mb-4 text-center text-white">Kontak Kami</h2>
+    <h2 class="mb-3 text-center text-white">Hubungi The Arlenmoor</h2>
+    <p class="text-center text-white-50 mb-4" style="max-width: 600px; margin: 0 auto;">
+      Ada pertanyaan, permintaan khusus, atau ingin berdiskusi seputar pemesanan kamar dan acara? Kirimkan pesan Anda melalui formulir berikut, dan staf kami akan segera menghubungi Anda.
+    </p>
 
     <?php if (isset($berhasil)) : ?>
-      <div class="alert alert-success text-center">Pesan kamu berhasil dikirim!</div>
+      <div class="alert alert-success text-center mt-4">✅ Pesan kamu berhasil dikirim. Terima kasih!</div>
     <?php endif; ?>
 
-    <form method="POST" class="form-kontak shadow mx-auto" style="max-width: 600px;">
+    <form method="POST" class="form-kontak shadow mx-auto mt-4" style="max-width: 600px;">
       <div class="mb-3">
-        <label class="form-label">Nama</label>
-        <input type="text" name="nama" class="form-control" required placeholder="Nama lengkap">
+        <label for="nama" class="form-label">Nama</label>
+        <input type="text" name="nama" id="nama" class="form-control" required placeholder="Nama lengkap" autofocus>
       </div>
       <div class="mb-3">
-        <label class="form-label">Email</label>
-        <input type="email" name="email" class="form-control" required placeholder="Alamat email">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" name="email" id="email" class="form-control" required placeholder="Alamat email">
       </div>
       <div class="mb-3">
-        <label class="form-label">Pesan</label>
-        <textarea name="pesan" rows="4" class="form-control" required placeholder="Tulis pesan kamu..."></textarea>
+        <label for="pesan" class="form-label">Pesan</label>
+        <textarea name="pesan" id="pesan" rows="4" class="form-control" required placeholder="Tulis pesan Anda..."></textarea>
       </div>
       <div class="text-center">
-        <button type="submit" class="btn btn-light px-4">Kirim</button>
+        <button type="submit" class="btn btn-warning px-4">📨 Kirim Pesan</button>
       </div>
       <div class="text-center mt-3">
         <a href="index.php" class="btn btn-outline-light btn-sm">← Kembali ke Beranda</a>
@@ -94,9 +101,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   </a>
   <a href="kamar.php" class="text-white text-center small">
     <div>🛏️</div><div>Kamar</div>
-  </a>
-  <a href="reservasi.php" class="text-white text-center small">
-    <div>📝</div><div>Pesan Kamar</div>
   </a>
   <a href="kontak.php" class="text-warning text-center small">
     <div>📞</div><div>Kontak</div>

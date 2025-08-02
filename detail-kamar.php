@@ -22,46 +22,68 @@ if (!$kamar) {
 
 <style>
 body {
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
               url('assets/img/hero3-bg.jpg') center/cover no-repeat fixed;
   color: white;
 }
 
 .transparan-box {
-  background: transparent;
-  padding: 30px;
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 15px;
-  color: white;
-  border: 1px solid rgba(255,255,255,0.2);
-  box-shadow: 0 0 30px rgba(0,0,0,0.4);
+  padding: 30px;
 }
 
+.badge-premium {
+  background-color: gold;
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
 
-  .mobile-nav a {
-    text-decoration: none;
-    flex: 1;
-  }
+h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+}
 
-  .mobile-nav a:hover {
-    background: rgba(255,255,255,0.05);
-  }
+.kamar-info {
+  font-size: 16px;
+}
 
+.mobile-nav a {
+  text-decoration: none;
+  flex: 1;
+}
+
+.mobile-nav a:hover {
+  background: rgba(255,255,255,0.05);
+}
 </style>
 
 <div class="container py-5">
   <div class="transparan-box">
-    <div class="row">
+    <div class="row align-items-center">
       <div class="col-md-6 mb-4">
-        <img src="assets/img/<?php echo $kamar['foto']; ?>" class="img-fluid rounded shadow" alt="Foto Kamar">
+        <img src="assets/img/<?php echo $kamar['foto']; ?>" class="img-fluid rounded shadow" alt="Foto <?php echo $kamar['nama_kamar']; ?>">
       </div>
-      <div class="col-md-6 d-flex flex-column flex-md-row justify-content-center align-items-center gap-3 mt-4">
-        <h2><?php echo $kamar['nama_kamar']; ?></h2>
-        <p class="text-light mb-1">Rp <?php echo number_format($kamar['harga_per_malam']); ?> / malam</p>
-        <p><?php echo $kamar['deskripsi']; ?></p>
-        <p><strong>Fasilitas:</strong><br><?php echo nl2br($kamar['fasilitas']); ?></p>
-        <a href="reservasi.php?id=<?php echo $kamar['id_kamar']; ?>" class="btn btn-success mt-3">Reservasi Sekarang</a>
+
+      <div class="col-md-6">
+        <?php if ($kamar['harga_per_malam'] >= 2000000): ?>
+          <span class="badge badge-premium px-3 py-2">🏅 Premium Suite</span>
+        <?php endif; ?>
+
+        <h2 class="mt-2"><?php echo $kamar['nama_kamar']; ?></h2>
+        <p class="text-warning fw-bold fs-5">Rp <?php echo number_format($kamar['harga_per_malam']); ?> <span class="fs-6">/ malam</span></p>
+
+        <div class="kamar-info">
+          <p><?php echo nl2br($kamar['deskripsi']); ?></p>
+          <p><strong>Fasilitas:</strong><br><?php echo nl2br($kamar['fasilitas']); ?></p>
+        </div>
+
+        <a href="reservasi.php?id=<?php echo $kamar['id_kamar']; ?>" class="btn btn-success mt-3">📝 Reservasi Sekarang</a>
+        <a href="kamar.php" class="btn btn-outline-light mt-3 ms-2">Kembali</a>
       </div>
-      <div class="col-md-6 d-flex flex-column flex-md-row justify-content-center align-items-center gap-3 mt-4"><a href="kamar.php" class="btn btn-outline-light mt-2">← Kembali ke Daftar Kamar</a></div>
     </div>
   </div>
 </div>
@@ -72,9 +94,6 @@ body {
   </a>
   <a href="kamar.php" class="text-white text-center small">
     <div>🛏️</div><div>Kamar</div>
-  </a>
-  <a href="reservasi.php" class="text-white text-center small">
-    <div>📝</div><div>Pesan Kamar</div>
   </a>
   <a href="kontak.php" class="text-white text-center small">
     <div>📞</div><div>Kontak</div>

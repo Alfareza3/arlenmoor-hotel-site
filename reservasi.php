@@ -132,9 +132,6 @@ if ($id_kamar) {
   <a href="kamar.php" class="text-white text-center small">
     <div>🛏️</div><div>Kamar</div>
   </a>
-  <a href="reservasi.php" class="text-warning text-center small">
-    <div>📝</div><div>Pesan Kamar</div>
-  </a>
   <a href="kontak.php" class="text-white text-center small">
     <div>📞</div><div>Kontak</div>
   </a>
