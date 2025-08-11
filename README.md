@@ -1,10 +1,7 @@
----
-
 # 🏨 The Arlenmoor Hotel
 
-Website resmi fiktif untuk hotel klasik bergaya Eropa bernama **The Arlenmoor**, dirancang sebagai proyek personal/PKL menggunakan **PHP Native** dan **Bootstrap 5**.
-
-Menampilkan citra kemewahan yang tenang, arsitektur era kolonial, dan layanan digital sederhana namun elegan.
+Website fiktif hotel klasik bergaya Eropa, dibangun menggunakan **PHP Native** dan **Bootstrap 5**.
+Mengusung nuansa kemewahan tenang dengan sentuhan arsitektur kolonial dan fitur reservasi sederhana namun elegan.
 
 ---
 
@@ -12,77 +9,79 @@ Menampilkan citra kemewahan yang tenang, arsitektur era kolonial, dan layanan di
 
 ### 🌐 Halaman Publik
 
-* **Beranda**: Hero slider klasik + tombol CTA menuju daftar kamar.
-* **Kamar**: Menampilkan daftar kamar dari database dengan desain bersih dan responsif.
-* **Detail Kamar**: Menampilkan foto, deskripsi, dan fasilitas tiap kamar.
-* **Tentang**: Sejarah & filosofi hotel, disertai highlight layanan unggulan.
-* **Kontak**: Formulir pengiriman pesan langsung ke sistem admin.
-* **Reservasi**: (Opsional) Masih tersedia sebagai simulasi alur pemesanan kamar.
+* **Beranda** – Tampilan utama dengan hero dan informasi hotel
+* **Daftar & Detail Kamar** – Informasi harga, fasilitas, dan foto kamar
+* **Tentang Hotel** – Sejarah singkat dan deskripsi
+* **Kontak** – Formulir pesan
+* **Simulasi Reservasi** – Form pemesanan online
+* **Navigasi Mobile Bawah** – Menu cepat untuk pengguna HP
+* **Musik Latar Piano** – Putar otomatis saat halaman dimuat
 
-### 📱 Navigasi Mobile Bawah (Bottom Nav)
+### 🔐 Panel Admin
 
-* Tampil hanya di perangkat mobile
-* Ikon & label intuitif: Beranda, Kamar, Reservasi, Kontak, Tentang
-* Memudahkan pengguna berpindah antar halaman
-
-### 🎵 Musik Latar Piano
-
-* Musik piano klasik diputar otomatis
-
----
-
-## 🔐 Panel Admin
-
-Autentikasi sederhana untuk login admin:
-
-* **Username:** `admin`
-* **Password:** `arlen123`
-
-Fitur-fitur:
-
-* **📊 Dashboard**: Menampilkan ringkasan jumlah kamar, reservasi, dan pesan masuk.
-* **🛏️ Kelola Kamar**: Tambah, edit, hapus kamar (CRUD).
-* **📆 Kelola Reservasi**: Lihat dan atur data reservasi dari pengguna.
-* **💳 Pembayaran**: Verifikasi bukti transfer dari form reservasi.
-* **💬 Pesan Masuk**: Cek pesan dari halaman kontak.
+* Login admin (autentikasi)
+* CRUD Kamar (tambah, edit, hapus)
+* Manajemen Reservasi
+* Verifikasi pembayaran
+* Manajemen pesan dari kontak
+* Dashboard ringkasan data
 
 ---
 
-## 💾 Struktur Database
+## 🛠️ Teknologi
 
-Gunakan database `arlenmoor` dengan tabel berikut:
-
-* `kamar` – data kamar hotel
-* `tamu` – informasi tamu yang memesan
-* `reservasi` – data pemesanan kamar
-* `pembayaran` – bukti transfer dari tamu
-* `kontak` – pesan dari form kontak
+* **PHP Native** – Backend scripting
+* **MySQL / MariaDB** – Database
+* **Bootstrap 5** – CSS framework responsif
+* **JavaScript** – Musik latar & navigasi dinamis
 
 ---
 
-## ⚙️ Teknologi yang Digunakan
+## 🚀 Instalasi
 
-* **PHP Native**
-* **MySQL**
-* **Bootstrap 5**
-* **JavaScript** (untuk efek musik, navbar dinamis)
+1. Pindahkan folder proyek ke `htdocs` / `www`
+2. Buat database `arlenmoor` di phpMyAdmin
+3. Import file SQL di folder `database/`
+4. Sesuaikan `koneksi.php` dengan konfigurasi lokal
+5. Akses halaman publik melalui:
+
+   ```
+   http://localhost/arlenmoor/
+   ```
+6. Login admin di:
+
+   ```
+   http://localhost/arlenmoor/admin/login.php
+   ```
 
 ---
 
-## 📝 Catatan Tambahan
+## 👤 Akun Admin Default
 
-Proyek ini dirancang dengan fokus pada:
-
-* Estetika klasik bergaya Eropa
-* Struktur kode rapi & mudah dikembangkan
-* UX yang lembut, tenang, dan profesional
-* Bisa dikembangkan lebih lanjut menjadi sistem reservasi online penuh
+```
+Username: admin
+Password: arlen123
+```
 
 ---
 
-## 👤 Author
+## 📌 Catatan
+
+* Desain bertema klasik Eropa
+* UX dibuat halus dan estetis
+* Cocok untuk pembelajaran sistem reservasi hotel
+* Bisa dikembangkan menjadi booking online full
+
+---
+
+## 👨‍💻 Developer
 
 **Dimas Fahri Alfareza**
-Project PKL 2025 – Website Hotel *The Arlenmoor*
+SMK TI Airlangga Samarinda
+Proyek PKL 2025
 
 ---
+
+## 📄 Lisensi
+
+Bebas digunakan untuk pembelajaran & pengembangan non-komersial.
